@@ -1,0 +1,43 @@
+# All possible options and their defaults: https://github.com/zitadel/zitadel/blob/main/cmd/defaults.yaml
+Log:
+  Level: 'info'
+
+# Make ZITADEL accessible over HTTP, not HTTPS
+ExternalSecure: true
+FirstInstance:
+  Org:
+    Human:
+      # use the loginname root@zitadel.localhost
+      Username: 'root'
+      Password: 'RootPassword1!'
+Port: 8080 # ZITADEL_PORT
+# ExternalPort is the port on which end users access ZITADEL.
+# It can differ from Port e.g. if a reverse proxy forwards the traffic to ZITADEL
+# Read more about external access: https://zitadel.com/docs/self-hosting/manage/custom-domain
+ExternalPort: 443 # ZITADEL_EXTERNALPORT
+# ExternalDomain is the domain on which end users access ZITADEL.
+# Read more about external access: https://zitadel.com/docs/self-hosting/manage/custom-domain
+ExternalDomain: "iam.xpanse.dev" # ZITADEL_EXTERNALDOMAIN
+# ExternalSecure specifies if ZITADEL is exposed externally using HTTPS or HTTP.
+# Read more about external access: https://zitadel.com/docs/self-hosting/manage/custom-domain
+# If not using the docker compose example, adjust these values for connecting ZITADEL to your PostgreSQL
+TLS:
+  # If enabled, ZITADEL will serve all traffic over TLS (HTTPS and gRPC)
+  # you must then also provide a private key and certificate to be used for the connection
+  # either directly or by a path to the corresponding file
+  Enabled: true
+Database:
+  postgres:
+    Host: 'bzikbqc9k0uptxhg3fvd-postgresql.services.clever-cloud.com'
+    Port: 7047
+    Database: zitadel
+    User:
+      Username: 'zitadel_user'
+      Password: 'zitadel_pw'
+      SSL:
+        Mode: 'disable'
+    Admin:
+      Username: 'zitadel_user'
+      Password: 'zitadel_pw'
+      SSL:
+        Mode: 'disable'
