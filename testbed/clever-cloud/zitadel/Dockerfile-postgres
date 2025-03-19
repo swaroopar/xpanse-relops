@@ -1,0 +1,3 @@
+FROM postgres:16-alpine
+ENV PGUSER: postgres
+ENV POSTGRES_PASSWORD: postgres
