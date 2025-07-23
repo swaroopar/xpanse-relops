@@ -1,0 +1,1 @@
+docker run --name nginx -v /etc/nginx/ssl/:/etc/nginx/ssl/ -d conf.d:/etc/nginx/conf.d -d nginx:latest
