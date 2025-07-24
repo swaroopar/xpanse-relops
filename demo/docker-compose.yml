@@ -65,6 +65,8 @@ services:
       - MYSQL_USER=xpanse
     env_file:
       - .mysql.db.env
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   terra-boot:
     networks:
