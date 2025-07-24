@@ -18,6 +18,7 @@ services:
       - TOFU_MAKER_ENDPOINT=http://tofu-maker:9092
       - AUTHORIZATION_TOKEN_TYPE=JWT
       - SPRING_DATASOURCE_JDBCURL=jdbc:otel:mysql://db:3306/xpanse
+      - SPRING_ACTIVITI_DATASOURCE_JDBCURL=jdbc:otel:mysql://db:3306/activiti
       - SPRING_PROFILES_ACTIVE=oauth,dev,zitadel,zitadel-testbed,terra-boot,mysql,opentelemetry,tofu-maker
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=io.opentelemetry.instrumentation.jdbc.OpenTelemetryDriver
       - POLICY_MAN_ENDPOINT=http://policy-man:8090
